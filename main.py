@@ -6,7 +6,7 @@ except:
 	print("Install ffmpy python module")
 import os
 
-def convert:
+def convert():
 	src="SOURCE"
 	dst="OUTPUT"
 	files=""
