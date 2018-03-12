@@ -28,13 +28,10 @@ def convert():
 
 	print("Found: ")
 	print("\n".join(files))
-	inputs={src+"/"+file:None for file in files}
-	outputs={dst+"/"+file: '-vf transpose=clock,scale=240:320' for file in files}
-
-	ff = FFmpeg(
-			inputs=inputs,
-			outputs=outputs
-			)
-
-	ff.run()
+	for file in files:
+		ff = FFmpeg(
+				inputs={src+'/'+file:None},
+				outputs={dst+'/'+file: '-vf transpose=clock,scale=240:320'}
+				)
+		ff.run()
 	print("Done!")
